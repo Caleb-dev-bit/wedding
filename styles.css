@@ -1,0 +1,28 @@
+footer {
+    display: flex;               
+    justify-content: center;      
+    background-color: gray;    
+    padding: 2%; 
+    /* margin: 0; */
+    width: 100%;
+}
+
+footer img {
+    width: 8%;  
+    /* height: auto;   */
+    /* margin: 5px;    */
+    border-radius: 100%;
+}
+
+.bubbles {
+    width: 100%;
+    /* margin: 0%; */
+    display: flex;
+}
+
+body{
+    margin: 0;
+}
+header{
+    font-size: 0;
+}
