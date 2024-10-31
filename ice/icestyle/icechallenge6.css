@@ -1,0 +1,91 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto 1fr;   /* Flexible first row for header */
+    grid-gap: 20px;
+    height: 100vh;
+    position: relative;
+}
+
+/* Main Header: Covers the entire row across both grids */
+.main-header {
+    grid-column: 1 / span 2; /* Spans both columns */
+    text-align: center;
+    position: absolute;
+    top: 120px; /* Slightly lower, overlapping the grid */
+    width: 100%;
+    z-index: 2; /* Ensures it's above the cherry image */
+}
+
+.main-header h1 {
+    font-size: 80px; /* Larger font size */
+    color: black; /* Black font color */
+    white-space: nowrap; /* Keeps the text on one line */
+}
+
+/* Left Column: Cherry Image */
+.cherry-image {
+    grid-column: 1; /* Left grid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cherry-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1; /* Ensures the image is behind the header */
+}
+
+/* Right Column: Gray Background with Cherries Header */
+.gray-background {
+    grid-column: 2; /* Right grid */
+    background-color: #ccc; /* Gray background */
+    display: flex;
+    justify-content: center; /* Center "Cherries" horizontally */
+    align-items: flex-end; /* Align "Cherries" vertically toward the bottom */
+    padding-bottom: 30px; /* Adds space from the bottom */
+    position: relative;
+}
+
+.gray-background h2 {
+    font-size: 50px; /* Larger font size */
+    color: #8B0000; /* Darker shade of red */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
+    }
+
+    .main-header h1 {
+        font-size: 60px; /* Slightly smaller for mobile */
+    }
+
+    .gray-background h2 {
+        font-size: 40px; /* Smaller size for mobile */
+    }
+
+    .cherry-image {
+        grid-column: 1; /* Takes full width on smaller screens */
+    }
+}

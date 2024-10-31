@@ -17,6 +17,9 @@ body {
 
 /* Header Styles */
 header {
+    display: grid; /* Use grid layout for header */
+    grid-template-columns: auto 1fr; /* Two columns: logo and main content */
+    align-items: center; /* Align items vertically */
     background-color: #53ABE0;
     padding: 20px;
     color: white;
@@ -87,8 +90,9 @@ h1 {
 
 /* Cards Section Styles */
 .cards-section {
-    display: flex;
-    justify-content: space-around;
+    display: grid; /* Use grid layout for cards */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
     margin: 40px 0;
 }
 
@@ -97,8 +101,13 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
-    width: 30%;
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .card img {
@@ -118,21 +127,19 @@ h1 {
 
 /* Love Story Section Styles */
 .love-story {
-    display: flex;
+    display: grid; /* Use grid layout for love story section */
+    grid-template-columns: 1fr 1fr; /* Two columns for image and content */
     align-items: center;
-    justify-content: center;
     margin: 40px 0;
 }
 
 .love-story-image img {
     max-width: 100%;
     border-radius: 8px;
-    margin-right: 20px;
-    width: 50%;
 }
 
 .love-story-content {
-    width: 50%;
+    padding: 20px; /* Add padding */
 }
 
 .love-story-content h2 {
@@ -183,36 +190,3 @@ footer h3 {
     margin-bottom: 10px;
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .cards-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .love-story {
-        flex-direction: column;
-    }
-
-    .love-story-image, .love-story-content {
-        width: 100%;
-    }
-
-    .hero-banner {
-        height: 300px;
-    }
-}
