@@ -1,0 +1,65 @@
+/* Gallery Subpage Styles */
+
+/* Header Styles */
+header {
+    display: grid; /* Use grid layout for header */
+    grid-template-columns: auto 1fr; /* Two columns: logo and main content */
+    align-items: center; /* Align items vertically */
+    background-color: #53ABE0;
+    padding: 20px;
+    color: white;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.gallery-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.gallery-item {
+    text-align: center;
+    max-width: 250px;
+}
+
+.gallery-item h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+ 
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.caleb-social img {
+    margin: 5px;
+    border-radius: 50%;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
