@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactus.css"> <!-- Link to the main CSS file -->
+</head>
+<body>
+
+    <!-- Header Section with Clickable Logo -->
+     <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="pictures/websitelogo.png" alt="Caleb and Emily's Wedding Logo">
+            </a>
+        </div>
+        <h1>Welcome to Caleb and Emily's Wedding</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div id="feedback"></div>
+        <form action="/my-handling-form-page" method="post">
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name" />
+            </p>
+            <p>
+              <label for="mail">Email:</label>
+              <input type="email" id="mail" name="user_email" />
+            </p>
+            <p>
+              <label for="msg">Message:</label>
+              <textarea id="msg" name="user_message"></textarea>
+            </p>
+            <p class="button">
+                <button type="submit">Send your message</button>
+              </p>
+              
+          </form>          
+
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Social Media Section for Caleb -->
+    <footer>
+        <p>&copy; 2024 Caleb and Emily. All rights reserved.</p>
+        <p>Follow us on:</p>
+
+        <div class="social-media">
+            <!-- Caleb's Social Media Links -->
+            <div class="caleb-social">
+                <h3>Caleb</h3>
+                <!-- Instagram -->
+                <a href="https://instagram.com/cubbyw" target="_blank">
+                    <img src="pictures/caleb_profile_pic.png" alt="Caleb's Instagram" width="30" height="30">
+                </a>
+                <!-- Facebook -->
+                <a href="https://facebook.com/caleb.white.16144" target="_blank">
+                    <img src="pictures/caleb_profile_pic.png" alt="Caleb's Facebook" width="30" height="30">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // get the feedback div element so we can do something with it.
+        const feedbackElement = document.getElementById('feedback');
+        // get the form so we can read what was entered in it.
+        const formElement = document.forms[0];
+        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+        formElement.addEventListener('submit', function(e) {
+            // stop the form from doing the default action.
+            e.preventDefault();
+            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+            // make the feedback element visible.
+            feedbackElement.style.display = "block";
+            // add a class to move everything down so our message doesn't cover it.
+            document.body.classList.toggle('moveDown');
+        });
+    </script>
+</body>
+</html>
